@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import _ from 'lodash';
+import _ from "lodash";
 import BookItem from "./BookItem";
 import BookForm from "./BookForm";
 
@@ -63,11 +63,11 @@ export default {
     filteredBooks() {
       return _.filter(this.books, ["ownership", this.holding]);
     },
-    searchedBooks(){
-      const searchFilter = (book) => {
+    searchedBooks() {
+      const searchFilter = book => {
         return book.title.toLowerCase().match(this.searchInput.toLowerCase());
-      },
-      return _.filter(this.books, searchFilter)
+      };
+      return _.filter(this.books, searchFilter);
     }
   },
   methods: {
